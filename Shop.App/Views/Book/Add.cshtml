@@ -1,0 +1,20 @@
+@model BookCreating
+@{
+    ViewData["Title"] = "Novo Livro";
+}
+<form method="post" asp-action="Add" id="form">
+    <input asp-for="Title" class="form-control" id=Title>
+    <input asp-for="PageCount" class="form-control" id = PageCount>
+    <input asp-for="PublishedDate" class="form-control" id = PublishedDate>
+    <input asp-for="ThumbnailUrl" class="form-control" id = ThumbnailUrl>
+    <input asp-for="ShortDescription" class="form-control" id =ShortDescription >
+    <input asp-for="LongDescription" class="form-control" id = LongDescription>
+    <input asp-for="Isbn" class="form-control" id = Isbn>
+
+    <div class="col">
+        <input type="submit" class="btn btn-info w-100" value="Add" />
+    </div>
+    <div class="col">
+        <a asp-action="Index" class="btn btn-success w-100"><i class="fas fa-sign-out-alt"></i> Back</a>
+    </div>
+</form>

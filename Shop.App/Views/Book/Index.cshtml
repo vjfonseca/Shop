@@ -1,0 +1,32 @@
+@model IEnumerable<BookRead>
+@{
+    ViewData["Title"] = "Livros";
+}
+<div class="row">
+    @foreach (BookRead b in @Model)
+    {
+        <div class="col-4 my-2 d-flex">
+            <div class="card text-left">
+                <div class="card-body">
+                    <h3 class="card-title">@b.Title</h3>
+                    <img src=@b.ThumbnailUrl
+                        class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt=""
+                        width=230px>
+                    <p class="card-text">@b.ShortDescription</p>
+                    <p class="card-text"><b>Páginas: </b>@b.PageCount</p>
+                    <p class="card-text"><b>ISBN: </b>@b.Isbn</p>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+<div class="container">
+    <br>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            <li class="page-item"><a class="page-link" asp-action="Index" asp-route-page=1>1</a></li>
+            <li class="page-item"><a class="page-link" asp-action="Index" asp-route-page=2>2</a></li>
+            <li class="page-item"><a class="page-link" asp-action="Index" asp-route-page=3>3</a></li>
+        </ul>
+    </nav>
+</div>
